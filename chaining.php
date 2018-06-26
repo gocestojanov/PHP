@@ -3,7 +3,7 @@
 class MyClass {
 
   private $a = 1;
-  private $b = 1;
+  private $b = 2;
 
   public function add(int $a) {
     //$this->a += $a;
@@ -18,6 +18,7 @@ class MyClass {
 
 
 $object = new MyClass();
+
 var_dump($object->add(4)->get());
 
 ?>
