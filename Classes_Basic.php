@@ -105,7 +105,7 @@ class B
 */
 
 
-class Foo
+class Foo1
 {
     public $bar = 'property';
     
@@ -114,8 +114,8 @@ class Foo
     }
 }
 
-$obj = new Foo();
-echo '<br>' . $obj->bar . '<br>', PHP_EOL, $obj->bar(), PHP_EOL;
+$obj = new Foo1();
+echo '<br>' . $obj->bar . '<br>' .  $obj->bar();
 
 class Foo
 {
@@ -132,9 +132,24 @@ $obj = new Foo();
 
 // as of PHP 5.3.0:
 $func = $obj->bar;
-echo $func(), PHP_EOL;
+echo "<br>" . $func();
 
 // alternatively, as of PHP 7.0.0:
-echo ($obj->bar)(), PHP_EOL;
+echo "<br>" . ($obj->bar)();
 
-?>
+class ExtendClass extends SimpleClass
+{
+    // Redefine the parent method
+    function displayVar()
+    {
+        echo "<br>Extending class\n";
+        parent::displayVar();
+    }
+}
+
+$extended = new ExtendClass();
+$extended->displayVar();
+
+
+
+
