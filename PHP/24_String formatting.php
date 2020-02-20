@@ -210,8 +210,8 @@ Replacing more than one character requires a function, i.e.- <b>substr_replace</
   $foo = \'Hello world!\';
   echo $foo[6];
   echo $foo{6};
-  echo substr($foo,6,1);
-  echo substr($foo,6,2);
+  echo substr_replace($foo, \'W\' 6,1);
+  echo substr_replace($foo,\'Whi\'6,2);
 
 ?>';
 highlight_string($code6);
